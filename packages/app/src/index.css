@@ -1,0 +1,125 @@
+@import "@opencode-ai/ui/styles/tailwind";
+
+:root {
+  --bg-dark: #0a0a0c;
+  --bg-pane: rgba(20, 20, 25, 0.7);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #3b82f6;
+  --text-main: #e2e8f0;
+  --text-dim: #94a3b8;
+  --glass-blur: 16px;
+
+  font-family: 'Outfit', sans-serif;
+
+  a {
+    cursor: default;
+  }
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/background.png') no-repeat center center/cover;
+  z-index: -1;
+  filter: brightness(0.7);
+  pointer-events: none;
+}
+
+.glass-pane {
+  background: var(--bg-pane);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.pane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.pane-header h3 {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+}
+
+.badge {
+  font-size: 0.6rem;
+  background: var(--accent-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: white;
+}
+
+.floating-element {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: 1;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.elem-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation: float 10s infinite;
+}
+
+.elem-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -50px;
+  left: -50px;
+  animation: float 15s infinite reverse;
+}
+
+.elem-3 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  animation: float 12s infinite 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate(30px, 50px);
+  }
+
+  66% {
+    transform: translate(-20px, 20px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+  }
+
+  to {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  }
+}
+
+*[data-tauri-drag-region] {
+  app-region: drag;
+}

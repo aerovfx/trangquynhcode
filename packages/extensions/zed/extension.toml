@@ -1,0 +1,36 @@
+id = "trangquynhcode"
+name = "TrangQuynhCode"
+description = "The open source coding agent."
+version = "1.1.25"
+schema_version = 1
+authors = ["Anomaly"]
+repository = "https://github.com/anomalyco/trangquynhcode"
+
+[agent_servers.trangquynhcode]
+name = "TrangQuynhCode"
+icon = "./icons/trangquynhcode.svg"
+
+[agent_servers.trangquynhcode.targets.darwin-aarch64]
+archive = "https://github.com/anomalyco/trangquynhcode/releases/download/v1.1.25/trangquynhcode-darwin-arm64.zip"
+cmd = "./trangquynhcode"
+args = ["acp"]
+
+[agent_servers.trangquynhcode.targets.darwin-x86_64]
+archive = "https://github.com/anomalyco/trangquynhcode/releases/download/v1.1.25/trangquynhcode-darwin-x64.zip"
+cmd = "./trangquynhcode"
+args = ["acp"]
+
+[agent_servers.trangquynhcode.targets.linux-aarch64]
+archive = "https://github.com/anomalyco/trangquynhcode/releases/download/v1.1.25/trangquynhcode-linux-arm64.tar.gz"
+cmd = "./trangquynhcode"
+args = ["acp"]
+
+[agent_servers.trangquynhcode.targets.linux-x86_64]
+archive = "https://github.com/anomalyco/trangquynhcode/releases/download/v1.1.25/trangquynhcode-linux-x64.tar.gz"
+cmd = "./trangquynhcode"
+args = ["acp"]
+
+[agent_servers.trangquynhcode.targets.windows-x86_64]
+archive = "https://github.com/anomalyco/trangquynhcode/releases/download/v1.1.25/trangquynhcode-windows-x64.zip"
+cmd = "./trangquynhcode.exe"
+args = ["acp"]
